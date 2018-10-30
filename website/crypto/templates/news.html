@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+  News
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for item in news.Data %}
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{item.imageurl}}" alt="{{item.source}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text">
+                        {{item.body|truncatewords:50}}
+                    </p>
+                    <a href="{{item.url}}" class="btn btn-secondary">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

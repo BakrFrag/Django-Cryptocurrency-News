@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+  Prices
+{% endblock title %}
+{% block content %}
+<table class="table table-bordered table-hover table-striped ">
+    <thead class="">
+        <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">24H HIGH</th>
+            <th scope="col">24H LOW</th>
+            <th scope="col">MARKET PRICE</th>
+        </tr>
+    </thead>
+    {% for key,value in prices.DISPLAY.items %}
+    <tbody>
+        <tr>
+            <td>{{key}}</td>
+            <td>{{ value.USD.PRICE }}</td>
+            <td>{{value.USD.HIGHDAY }}</td>
+            <td>{{ value.USD.LOWDAY }}</td>
+            <td>{{ value.USD.MKTCAP }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

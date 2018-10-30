@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+  Convert
+{% endblock title %}
+{% block content %}
+<select class="custom-select custom-select-lg mb-3" name="from">
+    {% for i in crypto_coins %}
+    <select value="{{i}}">{{i}}</select>
+    {% endfor %}
+</select>
+<select class="custom-select custom-select-lg mb-3" name="to">
+    {% for i in coins %}
+    <select value="{{i}}">{{i}}</select>
+    {% endfor %}
+</select>
+{% endblock content %}
